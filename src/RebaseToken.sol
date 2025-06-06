@@ -8,7 +8,7 @@ import {AccessControl} from "@openzeppelin/contracts/access/AccessControl.sol";
 /*
 * @title RebaseToken
 * @author Ciara Nightingale
-* @notice This is a cross-chain rebase token that incentivize users to deposit into a vault and gain interest in rewards.
+* @notice This is a cross-chain rebase token that incentivises users to deposit into a vault and gain interest in rewards.
 * @notice The interest rate in the smart contract can only decrease 
 * @notice Each will user will have their own interest rate that is the global interest rate at the time of depositing.
 */
@@ -135,7 +135,7 @@ contract RebaseToken is ERC20, Ownable, AccessControl {
         _mintAccruedInterest(msg.sender);
         _mintAccruedInterest(_recipient);
         if (balanceOf(_recipient) == 0) {
-            // Update the users interest rate only if they have not yet got one (or they transferred/burned all their tokens). Otherwise people could force others to have lower interest.
+            // Update the users interest rate only if they have not yet got one (or they tranferred/burned all their tokens). Otherwise people could force others to have lower interest.
             s_userInterestRate[_recipient] = s_userInterestRate[msg.sender];
         }
         return super.transfer(_recipient, _amount);
@@ -157,7 +157,7 @@ contract RebaseToken is ERC20, Ownable, AccessControl {
         _mintAccruedInterest(_sender);
         _mintAccruedInterest(_recipient);
         if (balanceOf(_recipient) == 0) {
-            // Update the users interest rate only if they have not yet got one (or they transferred/burned all their tokens). Otherwise people could force others to have lower interest.
+            // Update the users interest rate only if they have not yet got one (or they tranferred/burned all their tokens). Otherwise people could force others to have lower interest.
             s_userInterestRate[_recipient] = s_userInterestRate[_sender];
         }
         return super.transferFrom(_sender, _recipient, _amount);

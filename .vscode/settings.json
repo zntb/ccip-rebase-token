@@ -1,5 +1,17 @@
 {
-  "cSpell.words": ["Ciara", "Cyfrin", "keccak", "remappings"],
+  "cSpell.words": [
+    "ccip",
+    "chainid",
+    "chainlink",
+    "Ciara",
+    "Cyfrin",
+    "foundryup",
+    "IERC",
+    "incentivises",
+    "keccak",
+    "remappings",
+    "zksync"
+  ],
   "solidity.formatter": "forge",
   "solidity.telemetry": true,
   "solidity-language-server.trace.server.verbosity": "verbose"
